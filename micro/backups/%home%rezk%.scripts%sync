@@ -2,7 +2,6 @@
 CONFIG_DIR=~/.scripts/configs 
 base="$(basename $1)"
 cp -r $1 $CONFIG_DIR 
-echo $CONFIG_DIR/$base
 cd $CONFIG_DIR  
 git add $base 
 git commit -m "update $base"
