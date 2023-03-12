@@ -1,0 +1,2 @@
+2023/02/03 07:50:33 Micro started
+2023/02/03 07:50:33 monokai-dark is not a plugin
