@@ -1,0 +1,15 @@
+{
+    "autosu": true,
+    "colorscheme": "material-theme",
+    "diff": false,
+    "eofnewline": false,
+    "fastdirty": true,
+    "ignorecase": false,
+    "pluginchannels": [
+        "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
+    ],
+    "pluginrepos": [],
+    "softwrap": true,
+    "statusformatl": "",
+    "statusformatr": "$(filename) $(status.paste)| $(opt:filetype) | $(opt:fileformat) | $(opt:encoding)    "
+}

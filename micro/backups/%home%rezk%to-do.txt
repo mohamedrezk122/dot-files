@@ -1,0 +1,57 @@
+- Courses 
+	- undergraduate complexity theory 
+	
+
+- Projects
+
+	- CV.PY 
+		- more on regx 
+		- more on argparse
+		- yaml file as cv temp
+		
+	- undecidability of math 
+		- godel proof of incompletness
+		- halting problem 
+		- game of life 
+		- weird turing completes 
+
+	- non euclid geometry
+	- chess ai 
+	- the functional world
+
+- Internships
+
+	- Kaust internship
+		- B-series paper
+		- julia 
+		- statement of purpose 
+	- CUHK summer research program 
+		
+	
+
+- GSOC
+	- NUMfocus
+		- pylops
+		 
+	- sage-math 
+		- plane partition and alternating signed matrices
+		
+	
+- Exchange Program 
+
+	- list of courses							 [done]
+	- dr watheq letter for exchange approval
+		- contacted waiting for letter
+
+	- statement of purpose 
+	
+
+Docs 
+	- discrete recommendation 
+		- prime paper
+		- undecidability of math article 
+	- internship recommendation 
+		- report 
+		- simulation software
+		- optimization algos
+		-
