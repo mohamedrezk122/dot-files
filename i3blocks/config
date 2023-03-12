@@ -1,0 +1,84 @@
+# separator styles and colors
+full_text=|
+align=center
+color=#ffffff
+separator=false
+separator_block_width=1
+# font=1
+
+# [separator]
+# [spotify]
+# command=$ScriptsPath/sb-mediaplayer
+# interval=1
+# #label=🎻
+
+[separator]
+[gpu]
+command=$ScriptsPath/sb-gpu
+interval=60
+
+[separator]
+[cpu]
+command=$ScriptsPath/sb-cpu
+interval=60
+
+[separator]
+[uptime]
+command=$ScriptsPath/sb-uptime
+interval=60
+
+[separator]
+[mic]
+command=$ScriptsPath/sb-mic
+interval=once
+signal=2
+
+
+#[separator]
+
+#[pray]
+#command=$ScriptsPath/sb-prayer
+#interval=60
+
+[separator]
+
+[volume]
+command=$ScriptsPath/sb-volume "query"
+interval=once
+signal=2
+
+[separator]
+
+
+[brightness]
+command=$ScriptsPath/sb-brightness
+interval=once
+signal=3
+
+[separator]
+
+[memory]
+command=$ScriptsPath/sb-memory
+interval=5
+
+[separator]
+
+
+[time]
+command=$ScriptsPath/sb-clock
+interval=60
+
+[separator]
+
+[battery]
+command=$ScriptsPath/sb-battery
+interval=3
+
+[separator]
+
+[language]
+command=$ScriptsPath/sb-langprint
+interval=once
+signal=1
+
+[separator]
