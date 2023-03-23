@@ -4,15 +4,26 @@ align=center
 color=#ffffff
 separator=false
 separator_block_width=1
-# font=1
 
-# [separator]
-# [spotify]
-# command=$ScriptsPath/sb-mediaplayer
-# interval=1
-# #label=🎻
+
+
+
 
 [separator]
+
+[prayer]
+command=$ScriptsPath/sb-prayer
+interval=once
+label=🕌
+
+[aya]
+command=$ScriptsPath/random-quran-aya
+interval=360
+label=🕋
+
+
+# [separator]
+
 [gpu]
 command=$ScriptsPath/sb-gpu
 interval=60
@@ -32,13 +43,6 @@ interval=60
 command=$ScriptsPath/sb-mic
 interval=once
 signal=2
-
-
-#[separator]
-
-#[pray]
-#command=$ScriptsPath/sb-prayer
-#interval=60
 
 [separator]
 
