@@ -68,6 +68,7 @@ bindsym $super+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $super+f fullscreen toggle
+bindsym $super+Arabic_beh fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $super+s layout stacking
@@ -204,5 +205,8 @@ bindsym $super+m exec --no-startup-id $SCRIPTS_PATH/manpdf
 # class            border       backgr.   text     indicator  child_border
 client.focused     "#4c7899"  "#285577"  "#ffffff" "#2e9ef4"  $focused
 
+
 popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
+
+bindsym $super+Tab workspace next
