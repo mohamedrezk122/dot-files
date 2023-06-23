@@ -6,23 +6,25 @@ separator=false
 separator_block_width=1
 
 
+[separator]
 
+[prayer]
+command=$ScriptsPath/sb-spotify
+interval=1
 
 
 [separator]
 
 [prayer]
 command=$ScriptsPath/sb-prayer
-interval=once
-label=🕌
+interval=60
 
-[aya]
-command=$ScriptsPath/random-quran-aya
-interval=360
-label=🕋
+[separator]
 
-
-# [separator]
+# [aya]
+# command=$Scrip>tsPath/random-quran-aya
+# interval=600
+# label=🕋
 
 [gpu]
 command=$ScriptsPath/sb-gpu
@@ -47,7 +49,8 @@ signal=2
 [separator]
 
 [volume]
-command=$ScriptsPath/sb-volume "query"
+# command=$ScriptsPath/sb-volume "query"
+command=cat $ScriptsPath/volume.txt
 interval=once
 signal=2
 
