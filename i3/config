@@ -13,8 +13,9 @@
 set $SCRIPTS_PATH       ~/.scripts
 set $SB_SCRIPTS_PATH   ~/.scripts/statusbar
 set $super              Mod4
-set $TERMINAL           st 
-set $BROWSER            brave-browser-stable 
+# set $TERMINAL           alacritty -o font.size=15
+set $TERMINAL           st
+set $BROWSER            firefox 
 set $GUI_FILE_MANAGER   thunar
 
 # colors definition
@@ -35,7 +36,8 @@ font pango:monospace 11
 # startup application 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
-
+#exec setxkbmap -model pc105 -layout us,ar -option 'grp:alt_shift_toggle'
+# bindsym $super+s	exec --no-startup-id $SCRIPTS_PATH/startup
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier       $super
 tiling_drag modifier    titlebar
@@ -143,13 +145,12 @@ mode "resize" {
 }
 
 
-# i3bar
+# i3bar for primary monitor 
 bar {
         status_command i3blocks
         status_command ScriptsPath=~/.scripts/statusbar i3blocks
         position top 
         font pango:monospace 9
-        output HDMI-0
         output DP-2
 
         colors {
@@ -161,7 +162,23 @@ bar {
     }
 }
 
+# second monitor bar 
+bar {
+        position top 
+        font pango:monospace 12
+        status_command ScriptsPath=~/.scripts/statusbar i3blocks
+        output HDMI-0
+        colors {
+                background         $mono_black
+                
+#                                   BORDER       BACKGROUND   TEXT
+                focused_workspace  $focused     $focused     $white
+                inactive_workspace $mono_black  $mono_black  $white
+    }
+}
+
 bindsym $super+r mode "resize"
+bindsym $super+Tab workspace next
 
 # start dmenu (a program launcher)
 bindsym $super+d         exec --no-startup-id dmenu_run
@@ -175,7 +192,7 @@ bindsym XF86MonBrightnessUp    exec --no-startup-id xbacklight -inc 5 -steps 50 
 bindsym XF86MonBrightnessDown  exec --no-startup-id xbacklight -dec 5 -steps 50 && pkill -RTMIN+3 i3blocks
 
 # screenshots 
-bindsym --release Print exec --no-startup-id $SCRIPTS_PATH/capture_screen
+bindsym --release Print exec --no-startup-id $SCRIPTS_PATH/capture-screen
 
 # screen saver 
 bindsym  $super+l  exec --no-startup-id xscreensaver-command -lock
@@ -186,6 +203,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id  $SB_SCRIPTS_PATH/sb-volume "i
 bindsym XF86AudioLowerVolume exec --no-startup-id  $SB_SCRIPTS_PATH/sb-volume "dec"    &&  pkill -RTMIN+2 i3blocks
 bindsym XF86AudioMute        exec --no-startup-id  $SB_SCRIPTS_PATH/sb-volume "mute"   &&  pkill -RTMIN+2 i3blocks
 bindsym XF86AudioMicMute     exec --no-startup-id  pactl set-source-mute @DEFAULT_SOURCE@ toggle &&  pkill -RTMIN+2 i3blocks
+
+# bindsym shift+ exec --no-startup-id  $SB_SCRIPTS_PATH/sb-volume "inc"    &&  pkill -RTMIN+2 i3blocks
+# bindsym XF86AudioLowerVolume exec --no-startup-id  $SB_SCRIPTS_PATH/sb-volume "dec"    &&  pkill -RTMIN+2 i3blocks
+# bindsym XF86AudioMute        exec --no-startup-id  $SB_SCRIPTS_PATH/sb-volume "mute"   &&  pkill -RTMIN+2 i3blocks
+# bindsym XF86AudioMicMute     exec --no-startup-id  pactl set-source-mute @DEFAULT_SOURCE@ toggle &&  pkill -RTMIN+2 i3blocks
 
 # Media player keys
 bindsym XF86AudioPlay  exec --no-startup-id playerctl play-pause
@@ -203,10 +225,9 @@ bindsym $super+m exec --no-startup-id $SCRIPTS_PATH/manpdf
 
 
 # class            border       backgr.   text     indicator  child_border
-client.focused     "#4c7899"  "#285577"  "#ffffff" "#2e9ef4"  $focused
+client.focused     $white       $focused  $white   "#2e9ef4"  $focused
 
-
+title_align center
 popup_during_fullscreen smart
 workspace_auto_back_and_forth yes
 
-bindsym $super+Tab workspace next
