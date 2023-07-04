@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }" & 
+
+dunst & 
+picom &
+xset -b
+
+# some startup scripts
+scripts_path="/home/rezk/.scripts"
+
+$scripts_path/second-screen
+$scripts_path/set-bg
+
+sh $scripts_path/brightness.sh&
+sh $scripts_path/touchpad.sh&
+perl $scripts_path/lockscreenfix.pl&
+
+xscreensaver --no-splash  &
+
+# key bindings- load sxhkd configuration  
+# sxhkd -c ~/.config/sxhkd/sxhkdrc &
+
+
+
